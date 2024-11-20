@@ -1,0 +1,41 @@
+﻿@model Project35_BasicMVC.Models.CustomerOrdersViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Details</title>
+</head>
+<body>
+   
+    <h2>Customer Details</h2>
+    <p><strong>Id:</strong> @Model.Customer.Id</p>
+    <p><strong>First Name:</strong> @Model.Customer.FirstName</p>
+    <p><strong>Last Name:</strong> @Model.Customer.LastName</p>
+    <p><strong>Email:</strong> @Model.Customer.Email</p>
+
+    <h2>Order Details</h2>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Product Name</td>
+            <td>Price</td>
+            <td>Quantity</td>
+        </tr>
+        @foreach(var order in Model.Order)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.ProductName</td>
+                <td>@order.Price</td>
+                <td>@order.Quantity</td>
+            </tr>
+            
+        }
+    </table>
+
+
+
+
+
+</body>
+</html>
